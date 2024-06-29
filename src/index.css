@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	overflow-x: hidden;
+	background-color: #F3EBEB;
+}
+
+.font {
+	font-family: "Work Sans", sans-serif;
+}
+
