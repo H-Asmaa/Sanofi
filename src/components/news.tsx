@@ -1,3 +1,26 @@
+import ArrowRight from "/svg/arrow_right.svg";
+import Download from "/svg/download.svg"
+
+const articles = [
+	{
+		date: "24 février 2024",
+		title: "Communiqué : Résultats de phase II montrent que le rilzabrutinib permet de réduire rapidement la sévérité des démangeaisons causées par l'urticaire chronique spontanée et d'améliorer significativement l'activité de la maladie chez l'adulte",
+		linkText: "Lire le communiqué",
+		hasIcon: true,
+	},
+	{
+		date: "24 février 2024",
+		title: "Media Update: Dupixent® continues scientific leadership with late-breaking results showing reduced airway inflammation and mucus plugging in adults with uncontrolled moderate-to-severe asthma",
+		linkText: "Lire le communiqué",
+		hasIcon: true,
+	},
+	{
+		date: "23 février 2024",
+		title: "Communiqué de presse : La FDA accorde un examen prioritaire à la demande de licence de produits biologique relative à Dupixent® pour le traitement de la BPCO avec inflammation de type 2",
+		linkText: "Lire le communiqué",
+		hasIcon: true,
+	},
+];
 
 const News = () => {
 	return (
@@ -5,85 +28,29 @@ const News = () => {
 			<h1 className="font-bold text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl leading-loose p-4">
 				Nos dernières informations
 			</h1>
-			<article className="border border-white-600 w-full p-8 flex">
-				<div className="w-[80%]">
-					<p className="text-[12px] text-gray-700 pb-4">
-						24 février 2024
-					</p>
-					<p className="font-bold text-2xl pb-4">
-						Communiqué : Résultats de phase II montrent que le rilzabrutinib permet de
-						réduire rapidement la sévérité des démangeaisons causées par l'urticaire
-						chronique spontanée et d'améliorer significativement l'activité de la maladie chez
-						l'adulte
-					</p>
-					<button className="font-bold flex justify-between w-[200px]">Lire le communiqué
-						<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M15.6662 8.83604C16.0568 8.44541 16.0568 7.81104 15.6662 7.42041L10.6662 2.42041C10.2756 2.02979 9.64121 2.02979 9.25059 2.42041C8.85996 2.81104 8.85996 3.44541 9.25059 3.83604L12.5475 7.12979H2.95996C2.40684 7.12979 1.95996 7.57666 1.95996 8.12979C1.95996 8.68291 2.40684 9.12979 2.95996 9.12979H12.5443L9.25371 12.4235C8.86309 12.8142 8.86309 13.4485 9.25371 13.8392C9.64434 14.2298 10.2787 14.2298 10.6693 13.8392L15.6693 8.83916L15.6662 8.83604Z" fill="#7A00E6" />
-						</svg>
+			{articles.map((article, index) => (
+				<article key={index} className="border border-white-600 w-full p-8 flex">
+					<div className="w-[80%]">
+						<p className="text-[12px] text-gray-700 pb-4">{article.date}</p>
+						<p className="font-bold text-2xl pb-4">{article.title}</p>
+						<button className="font-bold flex justify-between w-[200px]">
+							{article.linkText}
+							<img className="hover:scale-105" src={ArrowRight} alt="Download" />
+						</button>
+					</div>
+					<button className="w-[20%] flex justify-end">
+						<img className="hover:scale-105" src={Download}></img>
 					</button>
-				</div>
-				<button className="w-[20%] flex justify-end">
-					<svg className="hover:scale-105" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<rect x="0.490234" y="0.5" width="43" height="43" rx="21.5" stroke="#7A00E6" />
-						<path d="M22.9902 15C22.9902 14.4469 22.5434 14 21.9902 14C21.4371 14 20.9902 14.4469 20.9902 15V22.5844L18.6965 20.2906C18.3059 19.9 17.6715 19.9 17.2809 20.2906C16.8902 20.6813 16.8902 21.3156 17.2809 21.7063L21.2809 25.7063C21.6715 26.0969 22.3059 26.0969 22.6965 25.7063L26.6965 21.7063C27.0871 21.3156 27.0871 20.6813 26.6965 20.2906C26.3059 19.9 25.6715 19.9 25.2809 20.2906L22.9902 22.5844V15ZM15.9902 25C14.8871 25 13.9902 25.8969 13.9902 27V28C13.9902 29.1031 14.8871 30 15.9902 30H27.9902C29.0934 30 29.9902 29.1031 29.9902 28V27C29.9902 25.8969 29.0934 25 27.9902 25H24.8184L23.4027 26.4156C22.6215 27.1969 21.3559 27.1969 20.5746 26.4156L19.1621 25H15.9902ZM27.4902 26.75C27.6891 26.75 27.8799 26.829 28.0206 26.9697C28.1612 27.1103 28.2402 27.3011 28.2402 27.5C28.2402 27.6989 28.1612 27.8897 28.0206 28.0303C27.8799 28.171 27.6891 28.25 27.4902 28.25C27.2913 28.25 27.1006 28.171 26.9599 28.0303C26.8193 27.8897 26.7402 27.6989 26.7402 27.5C26.7402 27.3011 26.8193 27.1103 26.9599 26.9697C27.1006 26.829 27.2913 26.75 27.4902 26.75Z" fill="#7A00E6" />
-					</svg>
-				</button>
-			</article>
-			<article className="border border-white-600 w-full p-8 flex">
-				<div className="w-[80%]">
-					<p className="text-[12px] text-gray-700 pb-4">
-						24 février 2024
-					</p>
-					<p className="font-bold text-2xl pb-4">
-						Media Update: Dupixent® continues scientific leadership with late-breaking results
-						showing reduced airway inflammation and mucus plugging in adults with
-						uncontrolled moderate-to-severe asthma
-					</p>
-					<button className="font-bold flex justify-between w-[200px]">Lire le communiqué
-						<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M15.6662 8.83604C16.0568 8.44541 16.0568 7.81104 15.6662 7.42041L10.6662 2.42041C10.2756 2.02979 9.64121 2.02979 9.25059 2.42041C8.85996 2.81104 8.85996 3.44541 9.25059 3.83604L12.5475 7.12979H2.95996C2.40684 7.12979 1.95996 7.57666 1.95996 8.12979C1.95996 8.68291 2.40684 9.12979 2.95996 9.12979H12.5443L9.25371 12.4235C8.86309 12.8142 8.86309 13.4485 9.25371 13.8392C9.64434 14.2298 10.2787 14.2298 10.6693 13.8392L15.6693 8.83916L15.6662 8.83604Z" fill="#7A00E6" />
-						</svg>
-					</button>
-				</div>
-				<button className="w-[20%] flex justify-end">
-					<svg className="hover:scale-105" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<rect x="0.490234" y="0.5" width="43" height="43" rx="21.5" stroke="#7A00E6" />
-						<path d="M22.9902 15C22.9902 14.4469 22.5434 14 21.9902 14C21.4371 14 20.9902 14.4469 20.9902 15V22.5844L18.6965 20.2906C18.3059 19.9 17.6715 19.9 17.2809 20.2906C16.8902 20.6813 16.8902 21.3156 17.2809 21.7063L21.2809 25.7063C21.6715 26.0969 22.3059 26.0969 22.6965 25.7063L26.6965 21.7063C27.0871 21.3156 27.0871 20.6813 26.6965 20.2906C26.3059 19.9 25.6715 19.9 25.2809 20.2906L22.9902 22.5844V15ZM15.9902 25C14.8871 25 13.9902 25.8969 13.9902 27V28C13.9902 29.1031 14.8871 30 15.9902 30H27.9902C29.0934 30 29.9902 29.1031 29.9902 28V27C29.9902 25.8969 29.0934 25 27.9902 25H24.8184L23.4027 26.4156C22.6215 27.1969 21.3559 27.1969 20.5746 26.4156L19.1621 25H15.9902ZM27.4902 26.75C27.6891 26.75 27.8799 26.829 28.0206 26.9697C28.1612 27.1103 28.2402 27.3011 28.2402 27.5C28.2402 27.6989 28.1612 27.8897 28.0206 28.0303C27.8799 28.171 27.6891 28.25 27.4902 28.25C27.2913 28.25 27.1006 28.171 26.9599 28.0303C26.8193 27.8897 26.7402 27.6989 26.7402 27.5C26.7402 27.3011 26.8193 27.1103 26.9599 26.9697C27.1006 26.829 27.2913 26.75 27.4902 26.75Z" fill="#7A00E6" />
-					</svg>
-				</button>
-			</article>
-			<article className="border border-white-600 w-full p-8 flex">
-				<div className="w-[80%]">
-					<p className="text-[12px] text-gray-700 pb-4">
-						23 février 2024
-					</p>
-					<p className="font-bold text-2xl pb-4">
-						Communiqué de presse : La FDA accorde un examen prioritaire à la demande de
-						licence de produits biologique relative à Dupixent® pour le traitement de la BPCO
-						avec inflammation de type 2
-					</p>
-					<button className="font-bold flex justify-between w-[200px]">Lire le communiqué
-						<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M15.6662 8.83604C16.0568 8.44541 16.0568 7.81104 15.6662 7.42041L10.6662 2.42041C10.2756 2.02979 9.64121 2.02979 9.25059 2.42041C8.85996 2.81104 8.85996 3.44541 9.25059 3.83604L12.5475 7.12979H2.95996C2.40684 7.12979 1.95996 7.57666 1.95996 8.12979C1.95996 8.68291 2.40684 9.12979 2.95996 9.12979H12.5443L9.25371 12.4235C8.86309 12.8142 8.86309 13.4485 9.25371 13.8392C9.64434 14.2298 10.2787 14.2298 10.6693 13.8392L15.6693 8.83916L15.6662 8.83604Z" fill="#7A00E6" />
-						</svg>
-					</button>
-				</div>
-				<button className="w-[20%] flex justify-end">
-					<svg className="hover:scale-105" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<rect x="0.490234" y="0.5" width="43" height="43" rx="21.5" stroke="#7A00E6" />
-						<path d="M22.9902 15C22.9902 14.4469 22.5434 14 21.9902 14C21.4371 14 20.9902 14.4469 20.9902 15V22.5844L18.6965 20.2906C18.3059 19.9 17.6715 19.9 17.2809 20.2906C16.8902 20.6813 16.8902 21.3156 17.2809 21.7063L21.2809 25.7063C21.6715 26.0969 22.3059 26.0969 22.6965 25.7063L26.6965 21.7063C27.0871 21.3156 27.0871 20.6813 26.6965 20.2906C26.3059 19.9 25.6715 19.9 25.2809 20.2906L22.9902 22.5844V15ZM15.9902 25C14.8871 25 13.9902 25.8969 13.9902 27V28C13.9902 29.1031 14.8871 30 15.9902 30H27.9902C29.0934 30 29.9902 29.1031 29.9902 28V27C29.9902 25.8969 29.0934 25 27.9902 25H24.8184L23.4027 26.4156C22.6215 27.1969 21.3559 27.1969 20.5746 26.4156L19.1621 25H15.9902ZM27.4902 26.75C27.6891 26.75 27.8799 26.829 28.0206 26.9697C28.1612 27.1103 28.2402 27.3011 28.2402 27.5C28.2402 27.6989 28.1612 27.8897 28.0206 28.0303C27.8799 28.171 27.6891 28.25 27.4902 28.25C27.2913 28.25 27.1006 28.171 26.9599 28.0303C26.8193 27.8897 26.7402 27.6989 26.7402 27.5C26.7402 27.3011 26.8193 27.1103 26.9599 26.9697C27.1006 26.829 27.2913 26.75 27.4902 26.75Z" fill="#7A00E6" />
-					</svg>
-				</button>
-			</article>
+				</article>
+			))}
 			<div className="w-full flex justify-end p-4">
-				<button className="font-bold flex justify-between w-[330px]">Voir tous les communiqués de presse
-					<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M15.6662 8.83604C16.0568 8.44541 16.0568 7.81104 15.6662 7.42041L10.6662 2.42041C10.2756 2.02979 9.64121 2.02979 9.25059 2.42041C8.85996 2.81104 8.85996 3.44541 9.25059 3.83604L12.5475 7.12979H2.95996C2.40684 7.12979 1.95996 7.57666 1.95996 8.12979C1.95996 8.68291 2.40684 9.12979 2.95996 9.12979H12.5443L9.25371 12.4235C8.86309 12.8142 8.86309 13.4485 9.25371 13.8392C9.64434 14.2298 10.2787 14.2298 10.6693 13.8392L15.6693 8.83916L15.6662 8.83604Z" fill="#7A00E6" />
-					</svg>
+				<button className="font-bold flex justify-between text-[13px] w-[330px]">
+					Voir tous les communiqués de presse
+					<img className="hover:scale-105" src={ArrowRight}></img>
 				</button>
 			</div>
 		</div>
-	)
+	);
 }
 
 export default News;

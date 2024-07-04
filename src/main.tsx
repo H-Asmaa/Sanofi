@@ -11,7 +11,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <Nav />
     <Hero />
-    <div className='w-[80%] mx-auto'>
+    <div className='w-[80%] mx-auto mb-20'>
       <SubPage />
     </div>
     <Footer />

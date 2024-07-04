@@ -14,7 +14,7 @@ const Hero = () => {
 					soutien et un accès équitables pour les personnes atteintes de maladies
 					rares.
 				</p>
-				<button className="bg-[#7A00E6] rounded-md text-white p-2">En savoir plus</button>
+				<button className="bg-[#7A00E6] rounded-md text-white p-2 hover:scale-105">En savoir plus</button>
 			</div>
 		</div>
 	)
